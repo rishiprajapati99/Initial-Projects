@@ -1,38 +1,45 @@
-import React, { JSX } from 'react';
-import { StyleSheet, Image, Text } from 'react-native';
+import React from 'react';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import {
+  View,
+  Text,
+  StyleSheet,
+  useColorScheme,
+  StatusBar,
+  ScrollView,
+} from 'react-native';
+import FlatCards from './components/FlatCards';
+import ElevatedCards from './components/ElevatedCards';
+import FancyCard from './components/FancyCard';
 
-const Hello = (): JSX.Element => {
+const App = () => {
+  const mode = useColorScheme();
   return (
     <SafeAreaProvider>
       <SafeAreaView
-        style={{
-          borderWidth: 2,
-          borderColor: 'black',
-          alignItems: 'center',
-        }}
+        style={[
+          // { backgroundColor: mode === 'dark' ? 'black' : 'white',
+          { flex: 1 },
+        ]}
       >
-        <Image
-          style={styles.image}
-          source={{
-            uri: 'https://reactnative.dev/img/tiny_logo.png',
-          }}
-        ></Image>
-        <Text style={styles.text}>This is React native</Text>
+        {/* <StatusBar
+          barStyle={mode === 'dark' ? 'light-content' : 'dark-content'}
+        ></StatusBar> */}
+        <ScrollView>
+          <FlatCards />
+          <ElevatedCards />
+          <FancyCard />
+        </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
   );
 };
+
 const styles = StyleSheet.create({
-  image: {
-    width: 420,
-    height: 420,
+  border: {
     borderWidth: 2,
-    borderColor: 'black',
-  },
-  text: {
-    borderWidth: 3,
-    borderColor: 'blue',
+    borderColor: 'red',
   },
 });
-export default Hello;
+
+export default App;
