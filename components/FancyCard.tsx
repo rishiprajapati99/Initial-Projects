@@ -16,10 +16,12 @@ const FancyCard = () => {
   const mode = useColorScheme();
   return (
     <View
-      style={[
-        // styles.border,
-        { flex: 1 },
-      ]}
+      style={
+        [
+          // styles.border,
+          // { flex: 1 },
+        ]
+      }
     >
       <View
         style={[
@@ -63,17 +65,19 @@ const FancyCard = () => {
             Located in Jaipur ,The Pink City
           </Text>
           <View style={{ flexDirection: 'row' }}>
-            <Text
-              style={[
-                styles.ImageDescription,
-                // { color: mode === 'dark' ? 'white' : 'black' },
-              ]}
-              numberOfLines={1}
-              id="description"
-            >
-              Hawa Mahal, also known as the "Palace of Winds", is a distinctive
-              five-s...
-            </Text>
+            <View style={{ width: 280 }}>
+              <Text
+                style={[
+                  styles.ImageDescription,
+                  // { color: mode === 'dark' ? 'white' : 'black' },
+                ]}
+                numberOfLines={1}
+                id="description"
+              >
+                Hawa Mahal, also known as the "Palace of Winds", is a
+                distinctive five-story palace in Jaipur
+              </Text>
+            </View>
 
             <TouchableOpacity
               onPress={
