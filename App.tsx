@@ -11,6 +11,7 @@ import {
 import FlatCards from './components/FlatCards';
 import ElevatedCards from './components/ElevatedCards';
 import FancyCard from './components/FancyCard';
+import BlogCard from './components/BlogCard';
 
 const App = () => {
   const mode = useColorScheme();
@@ -29,6 +30,7 @@ const App = () => {
           <FlatCards />
           <ElevatedCards />
           <FancyCard />
+          <BlogCard />
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>

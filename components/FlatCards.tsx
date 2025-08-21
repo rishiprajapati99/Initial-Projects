@@ -38,7 +38,10 @@ const FlatCards = () => {
         </View>
         <View style={[styles.cards, { backgroundColor: '#f6e58d' }]}>
           <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Light Yellow Card
+            Light Yellow
+          </Text>
+          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
+            Card
           </Text>
         </View>
         <View style={[styles.cards, { backgroundColor: '#ffbe76' }]}>
@@ -60,7 +63,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: 'red',
     fontWeight: 'bold',
-    marginHorizontal:8,
+    marginHorizontal: 8,
   },
   cards: {
     flex: 1,
