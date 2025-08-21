@@ -1,14 +1,23 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, useColorScheme } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  useColorScheme,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
 
 const FancyCard = () => {
+  const openWebsite = (websiteUrl: string) => {
+    Linking.openURL(websiteUrl);
+  };
   const mode = useColorScheme();
   return (
     <View
       style={[
-        {
-          /*styles.border*/
-        },
+        // styles.border,
         { flex: 1 },
       ]}
     >
@@ -58,11 +67,28 @@ const FancyCard = () => {
               styles.ImageDescription,
               // { color: mode === 'dark' ? 'white' : 'black' },
             ]}
+            numberOfLines={1}
+            id="description"
           >
             Hawa Mahal, also known as the "Palace of Winds", is a distinctive
             five-story palace in Jaipur, India, famous for its unique
             architecture and historical significance
           </Text>
+
+          <TouchableOpacity
+            onPress={
+              () => openWebsite('https://en.wikipedia.org/wiki/Hawa_Mahal') //passed the callBack function(openWebsite) with the website URL
+            }
+          >
+            <Text
+              style={[
+                { color: 'blue' },
+                // { color: mode === 'dark' ? 'white' : 'black' },
+              ]}
+            >
+              Read more
+            </Text>
+          </TouchableOpacity>
           <Text
             style={[
               styles.ImageFooter,
@@ -86,6 +112,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: 'red',
     fontWeight: 'bold',
+    marginHorizontal: 8,
   },
   ImageCard: {
     height: 230,
@@ -115,7 +142,7 @@ const styles = StyleSheet.create({
   },
   card: {
     // width: 400,
-    marginHorizontal: 8,
+    marginHorizontal: 12,
     borderRadius: 10,
     // borderTopLeftRadius:10,
   },
