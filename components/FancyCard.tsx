@@ -62,33 +62,34 @@ const FancyCard = () => {
           >
             Located in Jaipur ,The Pink City
           </Text>
-          <Text
-            style={[
-              styles.ImageDescription,
-              // { color: mode === 'dark' ? 'white' : 'black' },
-            ]}
-            numberOfLines={1}
-            id="description"
-          >
-            Hawa Mahal, also known as the "Palace of Winds", is a distinctive
-            five-story palace in Jaipur, India, famous for its unique
-            architecture and historical significance
-          </Text>
-
-          <TouchableOpacity
-            onPress={
-              () => openWebsite('https://en.wikipedia.org/wiki/Hawa_Mahal') //passed the callBack function(openWebsite) with the website URL
-            }
-          >
+          <View style={{ flexDirection: 'row' }}>
             <Text
               style={[
-                { color: 'blue' },
+                styles.ImageDescription,
                 // { color: mode === 'dark' ? 'white' : 'black' },
               ]}
+              numberOfLines={1}
+              id="description"
             >
-              Read more
+              Hawa Mahal, also known as the "Palace of Winds", is a distinctive
+              five-s...
             </Text>
-          </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={
+                () => openWebsite('https://en.wikipedia.org/wiki/Hawa_Mahal') //passed the callBack function(openWebsite) with the website URL
+              }
+            >
+              <Text
+                style={[
+                  { color: 'blue' },
+                  // { color: mode === 'dark' ? 'white' : 'black' },
+                ]}
+              >
+                Read more
+              </Text>
+            </TouchableOpacity>
+          </View>
           <Text
             style={[
               styles.ImageFooter,
@@ -115,7 +116,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
   ImageCard: {
-    height: 230,
+    height: 270,
+    // width:490,
     // borderRadius: 16,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
@@ -141,7 +143,7 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   card: {
-    // width: 400,
+    // width: 490,
     marginHorizontal: 12,
     borderRadius: 10,
     // borderTopLeftRadius:10,
