@@ -87,15 +87,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   socialLinks: {
-    color: 'blue',
+    color: '#ffffff',
     fontSize:15,
-    backgroundColor:'#edc09dff',
+    backgroundColor:'#3761fb',
     padding:6,//padding(defination=>space inside the box(view or container(can be <Text>)) and the content(ex text))=>defines the space between content and the border of the box
     borderRadius:15,
     // marginHorizontal:6,//margin =>space between boxes(view) . margin(defination=<space outside of the box(View))
     paddingHorizontal:26,
     borderWidth:1,
-    borderColor:'#cbae4eff'
+    borderColor:'#6f74efff'
   },
 });
 
