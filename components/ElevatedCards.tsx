@@ -23,7 +23,7 @@ const ElevatedCards = () => {
       <Text style={[styles.headingText]}>ElevatedCards</Text>
       <ScrollView
         horizontal
-        showsHorizontalScrollIndicator={false}//this hide the scroll indicator
+        showsHorizontalScrollIndicator={false}//this hides the scroll indicator
         contentContainerStyle={[
           { padding: 4 },
           // styles.border
