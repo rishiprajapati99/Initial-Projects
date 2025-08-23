@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   Image: {
     height: 180,
     borderRadius: 8,
-    //  elevation: 8,
+     elevation: 2,
   },
   ImageText: {
     margin: 10,
@@ -88,14 +88,14 @@ const styles = StyleSheet.create({
   },
   socialLinks: {
     color: '#ffffff',
-    fontSize:15,
-    backgroundColor:'#3761fb',
-    padding:6,//padding(defination=>space inside the box(view or container(can be <Text>)) and the content(ex text))=>defines the space between content and the border of the box
-    borderRadius:15,
+    fontSize: 15,
+    backgroundColor: '#3761fb',
+    padding: 7, //padding(defination=>space inside the box(view or container(can be <Text>)) and the content(ex text))=>defines the space between content and the border of the box
+    borderRadius: 20,
     // marginHorizontal:6,//margin =>space between boxes(view) . margin(defination=<space outside of the box(View))
-    paddingHorizontal:26,
-    borderWidth:1,
-    borderColor:'#6f74efff'
+    paddingHorizontal: 26,
+    borderWidth: 2,
+    borderColor: '#82cde764',
   },
 });
 

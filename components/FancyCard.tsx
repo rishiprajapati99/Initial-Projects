@@ -65,14 +65,13 @@ const FancyCard = () => {
             Located in Jaipur ,The Pink City
           </Text>
           <View style={{ flexDirection: 'row' }}>
-            <View style={{ width: 280 }}>
+            <View style={{ width: '85%' }}>
               <Text
                 style={[
                   styles.ImageDescription,
                   // { color: mode === 'dark' ? 'white' : 'black' },
                 ]}
                 numberOfLines={1}
-                id="description"
               >
                 Hawa Mahal, also known as the "Palace of Winds", is a
                 distinctive five-story palace in Jaipur
