@@ -10,22 +10,22 @@ import {
 const ScrollableCards = () => {
   const mode = useColorScheme();
   const colors = [
-    { name: 'Red', value: '#ef1010ff' },
-    { name: 'Yellow', value: '#f6e58d' },
-    { name: 'Peach', value: '#ffbe76' },
-    { name: 'Orange', value: '#e74c3c' },
-    { name: 'Gold', value: '#f1c40f' },
-    { name: 'Crimson', value: '#e74c3c' },
-    { name: 'Silver', value: '#bdc3c7' },
-    { name: 'Orchid', value: '#8e44ad' },
-    { name: 'Olive', value: '#4d510bff' },
-    { name: 'Grey', value: '#747d8c' },
+    { id: 1, name: 'Red', value: '#ef1010ff' },
+    { id: 2, name: 'Yellow', value: '#f6e58d' },
+    { id: 3, name: 'Peach', value: '#ffbe76' },
+    { id: 4, name: 'Orange', value: '#e74c3c' },
+    { id: 5, name: 'Gold', value: '#f1c40f' },
+    { id: 6, name: 'Crimson', value: '#e74c3c' },
+    { id: 7, name: 'Silver', value: '#bdc3c7' },
+    { id: 8, name: 'Orchid', value: '#8e44ad' },
+    { id: 9, name: 'Olive', value: '#4d510bff' },
+    { id: 10, name: 'Grey', value: '#747d8c' },
   ];
   const cards = [];
   for (let i = 0; i < 10; i++) {
     cards.push(
       <View
-        key={i}
+        key={colors[i].id}
         style={[styles.cards, { backgroundColor: colors[i].value }]}
       >
         <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
@@ -48,7 +48,8 @@ const ScrollableCards = () => {
       <Text style={[styles.headingText]}>ScrollableCards</Text>
       <ScrollView
         horizontal
-        showsHorizontalScrollIndicator={false} //this hides the scroll indicator
+        showsHorizontalScrollIndicator={false} //this hides the HorizontalScroll indicator
+        // scrollEnabled={false}//can be used to temporary disable the scroll
         contentContainerStyle={[
           { padding: 4 },
           // styles.border

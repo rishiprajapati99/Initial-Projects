@@ -4,15 +4,15 @@ import { View, Text, StyleSheet, useColorScheme } from 'react-native';
 const FlatCards = () => {
   const mode = useColorScheme();
   const colors = [
-    { name: 'Red', value: 'red' },
-    { name: 'Yellow', value: '#f6e58d' },
-    { name: 'Peach', value: '#ffbe76' },
+    { id: 1, name: 'Red', value: '#ef1010ff' },
+    { id: 2, name: 'Yellow', value: '#f6e58d' },
+    { id: 3, name: 'Peach', value: '#ffbe76' },
   ];
   const cards = [];
   for (let i = 0; i < 3; i++) {
     cards.push(
       <View
-        key={i}
+        key={colors[i].id} //set a unique key so that even if order of elements change still React will be able to detect the same element during any change
         style={[styles.cards, { backgroundColor: colors[i].value }]}
       >
         <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
@@ -56,6 +56,7 @@ const FlatCards = () => {
 };
 
 const styles = StyleSheet.create({
+  //A Json Object
   border: {
     borderWidth: 2,
     borderColor: 'red',

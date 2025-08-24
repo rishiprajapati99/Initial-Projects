@@ -10,6 +10,7 @@ import FlatCards from './components/FlatCards';
 import ScrollableCards from './components/ScrollableCards';
 import FancyCard from './components/FancyCard';
 import BlogCard from './components/BlogCard';
+import ContactList from './components/ContactList';
 
 const App = () => {
   const mode = useColorScheme();
@@ -24,11 +25,12 @@ const App = () => {
         {/* <StatusBar
           barStyle={mode === 'dark' ? 'light-content' : 'dark-content'}
         ></StatusBar> */}
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false} scrollEnabled={true}>
           <FlatCards />
           <ScrollableCards />
           <FancyCard />
           <BlogCard />
+          <ContactList />
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
