@@ -3,6 +3,24 @@ import { View, Text, StyleSheet, useColorScheme } from 'react-native';
 
 const FlatCards = () => {
   const mode = useColorScheme();
+  const colors = [
+    { name: 'Red', value: 'red' },
+    { name: 'Yellow', value: '#f6e58d' },
+    { name: 'Peach', value: '#ffbe76' },
+  ];
+  const cards = [];
+  for (let i = 0; i < 3; i++) {
+    cards.push(
+      <View
+        key={i}
+        style={[styles.cards, { backgroundColor: colors[i].value }]}
+      >
+        <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
+          {colors[i].name} Card
+        </Text>
+      </View>,
+    );
+  }
   return (
     <View
       style={[
@@ -31,24 +49,7 @@ const FlatCards = () => {
           },
         ]}
       >
-        <View style={[styles.cards, { backgroundColor: 'red' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Red Card
-          </Text>
-        </View>
-        <View style={[styles.cards, { backgroundColor: '#f6e58d' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Light Yellow
-          </Text>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Card
-          </Text>
-        </View>
-        <View style={[styles.cards, { backgroundColor: '#ffbe76' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Peach Card
-          </Text>
-        </View>
+        {cards}
       </View>
     </View>
   );

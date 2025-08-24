@@ -9,6 +9,40 @@ import {
 
 const ScrollableCards = () => {
   const mode = useColorScheme();
+  const colors = [
+    '#ef1010ff',
+    '#f6e58d',
+    '#ffbe76',
+    '#e74c3c',
+    '#f1c40f',
+    '#e74c3c',
+    '#bdc3c7',
+    '#8e44ad',
+    '#4d510bff',
+    '#747d8c',
+  ];
+  const names = [
+    'Red',
+    'Yellow',
+    'Peach',
+    'Orange',
+    'Gold',
+    'Crimson',
+    'Silver',
+    'Orchid',
+    'Olive',
+    'Grey',
+  ];
+  const cards = [];
+  for (let i = 0; i < 10; i++) {
+    cards.push(
+      <View key={i} style={[styles.cards, { backgroundColor: colors[i] }]}>
+        <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
+          {names[i]} Card
+        </Text>
+      </View>,
+    );
+  }
   return (
     <View
       style={[
@@ -23,77 +57,13 @@ const ScrollableCards = () => {
       <Text style={[styles.headingText]}>ScrollableCards</Text>
       <ScrollView
         horizontal
-        showsHorizontalScrollIndicator={false}//this hides the scroll indicator
+        showsHorizontalScrollIndicator={false} //this hides the scroll indicator
         contentContainerStyle={[
           { padding: 4 },
           // styles.border
         ]}
       >
-        <View style={[styles.cards, { backgroundColor: 'red' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Red Card
-          </Text>
-        </View>
-        <View style={[styles.cards, { backgroundColor: '#f6e58d' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Light Yellow
-          </Text>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Card
-          </Text>
-        </View>
-        <View style={[styles.cards, { backgroundColor: '#ffbe76' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Peach Card
-          </Text>
-        </View>
-        <View style={[styles.cards, { backgroundColor: '#e74c3c' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Red-Orange
-          </Text>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Card
-          </Text>
-        </View>
-        <View style={[styles.cards, { backgroundColor: '#f1c40f' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Gold Card
-          </Text>
-        </View>
-        <View style={[styles.cards, { backgroundColor: '#e74c3c' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Crimson Card
-          </Text>
-        </View>
-        <View style={[styles.cards, { backgroundColor: '#bdc3c7' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Silver Card
-          </Text>
-        </View>
-        <View style={[styles.cards, { backgroundColor: '#8e44ad' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Dark Orchid
-          </Text>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Card
-          </Text>
-        </View>
-        <View style={[styles.cards, { backgroundColor: '#4d510bff' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Olive Drab
-          </Text>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Card
-          </Text>
-        </View>
-        <View style={[styles.cards, { backgroundColor: '#ed850eff' }]}>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Dark Orange
-          </Text>
-          <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-            Card
-          </Text>
-        </View>
+        {cards}
       </ScrollView>
     </View>
   );
