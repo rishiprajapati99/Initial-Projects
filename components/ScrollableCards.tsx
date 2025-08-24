@@ -7,7 +7,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-const ElevatedCards = () => {
+const ScrollableCards = () => {
   const mode = useColorScheme();
   return (
     <View
@@ -20,7 +20,7 @@ const ElevatedCards = () => {
         // styles.border,
       ]}
     >
-      <Text style={[styles.headingText]}>ElevatedCards</Text>
+      <Text style={[styles.headingText]}>ScrollableCards</Text>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}//this hides the scroll indicator
@@ -132,4 +132,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ElevatedCards;
+export default ScrollableCards;

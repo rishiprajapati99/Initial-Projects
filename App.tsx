@@ -7,7 +7,7 @@ import {
   ScrollView,
 } from 'react-native';
 import FlatCards from './components/FlatCards';
-import ElevatedCards from './components/ElevatedCards';
+import ScrollableCards from './components/ScrollableCards';
 import FancyCard from './components/FancyCard';
 import BlogCard from './components/BlogCard';
 
@@ -26,7 +26,7 @@ const App = () => {
         ></StatusBar> */}
         <ScrollView>
           <FlatCards />
-          <ElevatedCards />
+          <ScrollableCards />
           <FancyCard />
           <BlogCard />
         </ScrollView>
