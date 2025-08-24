@@ -10,35 +10,26 @@ import {
 const ScrollableCards = () => {
   const mode = useColorScheme();
   const colors = [
-    '#ef1010ff',
-    '#f6e58d',
-    '#ffbe76',
-    '#e74c3c',
-    '#f1c40f',
-    '#e74c3c',
-    '#bdc3c7',
-    '#8e44ad',
-    '#4d510bff',
-    '#747d8c',
-  ];
-  const names = [
-    'Red',
-    'Yellow',
-    'Peach',
-    'Orange',
-    'Gold',
-    'Crimson',
-    'Silver',
-    'Orchid',
-    'Olive',
-    'Grey',
+    { name: 'Red', value: '#ef1010ff' },
+    { name: 'Yellow', value: '#f6e58d' },
+    { name: 'Peach', value: '#ffbe76' },
+    { name: 'Orange', value: '#e74c3c' },
+    { name: 'Gold', value: '#f1c40f' },
+    { name: 'Crimson', value: '#e74c3c' },
+    { name: 'Silver', value: '#bdc3c7' },
+    { name: 'Orchid', value: '#8e44ad' },
+    { name: 'Olive', value: '#4d510bff' },
+    { name: 'Grey', value: '#747d8c' },
   ];
   const cards = [];
   for (let i = 0; i < 10; i++) {
     cards.push(
-      <View key={i} style={[styles.cards, { backgroundColor: colors[i] }]}>
+      <View
+        key={i}
+        style={[styles.cards, { backgroundColor: colors[i].value }]}
+      >
         <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-          {names[i]} Card
+          {colors[i].name} Card
         </Text>
       </View>,
     );
