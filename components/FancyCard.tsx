@@ -65,7 +65,7 @@ const FancyCard = () => {
             Located in Jaipur ,The Pink City
           </Text>
           <View style={{ flexDirection: 'row' }}>
-            <View style={{ width: '83%' }}>
+            <View style={{ width: '81%' }}>
               <Text
                 style={[
                   styles.ImageDescription,

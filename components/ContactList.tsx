@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ScrollView,
+  TouchableHighlight,
+} from 'react-native';
 
 const ContactList = () => {
   const contacts = [
@@ -13,7 +20,8 @@ const ContactList = () => {
     {
       uid: 2,
       name: 'User2',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8HLR4EfXiN_hZM3xov_Top-r53JyfbnUjqw&s',
+      imageUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8HLR4EfXiN_hZM3xov_Top-r53JyfbnUjqw&s',
       about:
         'Be the change you want to see in the world" or "Life is a beautiful struggle',
     },
@@ -34,13 +42,15 @@ const ContactList = () => {
     {
       uid: 5,
       name: 'User5',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcB7RMqhPFj6eS28XhfQtDpZSWeCsBo2DyKQ&s',
+      imageUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcB7RMqhPFj6eS28XhfQtDpZSWeCsBo2DyKQ&s',
       about: 'Expect nothing, be grateful for everything',
     },
     {
       uid: 6,
       name: 'User6',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1fErJgCrN-rggJUTy1oWXvGFE3OUR8JzIQQ&s',
+      imageUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1fErJgCrN-rggJUTy1oWXvGFE3OUR8JzIQQ&s',
       about:
         'Dont Change So People Will Like You. Be Yourself and The Right People Will Love the Real You',
     },
@@ -54,7 +64,7 @@ const ContactList = () => {
   ];
   return (
     <View style={[styles.mainView]}>
-      <Text style={[styles.headingText]}></Text>
+      <Text style={[styles.headingText]}>Contact List</Text>
       <ScrollView
         style={{ height: 310 }}
         scrollEnabled={true}
@@ -65,24 +75,34 @@ const ContactList = () => {
             { uid, name, imageUrl, about }, //destructured the parameters names
           ) => (
             <View key={uid} style={[styles.contactList]}>
-              <View style={[styles.contactRow]}>
-                <Image
-                  source={{
-                    uri: imageUrl,
-                  }}
-                  style={[styles.DP]}
-                />
-                <View style={[styles.userInfoContainer]}>
-                  <View style={[styles.useInfo]}>
-                    <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
-                      {name}
-                    </Text>
-                  </View>
-                  <View>
-                    <Text numberOfLines={1}>{about}</Text>
+              <TouchableHighlight
+                underlayColor="#dfe4ea"
+                onPress={() => {}}
+                style={[
+                  { flex: 1 },
+                  // styles.border
+                ]}
+              >
+                <View style={[styles.contactRow]}>
+                  <Image
+                    source={{
+                      uri: imageUrl,
+                    }}
+                    style={[styles.DP]}
+                  />
+
+                  <View style={[styles.userInfoContainer]}>
+                    <View style={[styles.useInfo]}>
+                      <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
+                        {name}
+                      </Text>
+                    </View>
+                    <View>
+                      <Text numberOfLines={1}>{about}</Text>
+                    </View>
                   </View>
                 </View>
-              </View>
+              </TouchableHighlight>
             </View>
           ),
         )}
@@ -99,7 +119,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: 'red',
     fontWeight: 'bold',
-    paddingHorizontal: 8,
   },
   contactList: {},
   contactRow: { flexDirection: 'row', marginBottom: 14 },
@@ -107,11 +126,13 @@ const styles = StyleSheet.create({
     height: 60,
     width: 60,
     borderRadius: 30, //to make a circle(to look like a logo) borderRadius should be half of the width=>width/2
+    marginRight: 14,
   },
   userInfoContainer: {
-    marginLeft: 12,
+    // marginLeft: 12,
     flex: 1,
     justifyContent: 'space-evenly',
+    width: '100%',
   },
   useInfo: {},
 });
