@@ -77,7 +77,7 @@ const ContactList = () => {
           <View key={uid} style={[styles.HorizontalListDP]}>
             <TouchableOpacity
               onPress={() => {
-                Alert.alert(name + '\n' + about);
+                Alert.alert('Contact Info', name + '\n' + about);
               }}
             >
               <Image
