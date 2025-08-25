@@ -6,6 +6,8 @@ import {
   Image,
   ScrollView,
   TouchableHighlight,
+  TouchableOpacity,
+  Alert,
 } from 'react-native';
 
 const ContactList = () => {
@@ -71,14 +73,20 @@ const ContactList = () => {
         contentContainerStyle={[styles.horizontalContactLiist]}
         showsHorizontalScrollIndicator={false}
       >
-        {contacts.map(({ uid, imageUrl }) => (
+        {contacts.map(({ uid, imageUrl, name, about }) => (
           <View key={uid} style={[styles.HorizontalListDP]}>
-            <Image
-              source={{
-                uri: imageUrl,
+            <TouchableOpacity
+              onPress={() => {
+                Alert.alert(name + '\n' + about);
               }}
-              style={{ height: 60, width: 60, borderRadius: 30 }}
-            />
+            >
+              <Image
+                source={{
+                  uri: imageUrl,
+                }}
+                style={{ height: 60, width: 60, borderRadius: 30 }}
+              />
+            </TouchableOpacity>
           </View>
         ))}
       </ScrollView>
@@ -143,10 +151,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   horizontalContactLiist: {
-    margin:4,
-    marginBottom:12,
+    margin: 4,
+    marginBottom: 12,
   },
-  HorizontalListDP:{marginHorizontal:6},
+  HorizontalListDP: { marginHorizontal: 6 },
   contactList: {},
   contactRow: { flexDirection: 'row', marginBottom: 14 },
   DP: {
