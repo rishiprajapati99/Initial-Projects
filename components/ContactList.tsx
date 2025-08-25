@@ -66,6 +66,23 @@ const ContactList = () => {
     <View style={[styles.mainView]}>
       <Text style={[styles.headingText]}>Contact List</Text>
       <ScrollView
+        horizontal={true}
+        nestedScrollEnabled={true}
+        contentContainerStyle={[styles.horizontalContactLiist]}
+        showsHorizontalScrollIndicator={false}
+      >
+        {contacts.map(({ uid, imageUrl }) => (
+          <View key={uid} style={[styles.HorizontalListDP]}>
+            <Image
+              source={{
+                uri: imageUrl,
+              }}
+              style={{ height: 60, width: 60, borderRadius: 30 }}
+            />
+          </View>
+        ))}
+      </ScrollView>
+      <ScrollView
         style={{ height: 310 }}
         scrollEnabled={true}
         nestedScrollEnabled={true}
@@ -91,7 +108,12 @@ const ContactList = () => {
                     style={[styles.DP]}
                   />
 
-                  <View style={[styles.userInfoContainer]}>
+                  <View
+                    style={[
+                      styles.userInfoContainer,
+                      // styles.border
+                    ]}
+                  >
                     <View style={[styles.useInfo]}>
                       <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
                         {name}
@@ -120,6 +142,11 @@ const styles = StyleSheet.create({
     color: 'red',
     fontWeight: 'bold',
   },
+  horizontalContactLiist: {
+    margin:4,
+    marginBottom:12,
+  },
+  HorizontalListDP:{marginHorizontal:6},
   contactList: {},
   contactRow: { flexDirection: 'row', marginBottom: 14 },
   DP: {
@@ -132,7 +159,6 @@ const styles = StyleSheet.create({
     // marginLeft: 12,
     flex: 1,
     justifyContent: 'space-evenly',
-    width: '100%',
   },
   useInfo: {},
 });
