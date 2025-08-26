@@ -101,7 +101,7 @@ const ContactList = () => {
           ) => (
             <View key={uid} style={[styles.contactList]}>
               <TouchableHighlight
-                underlayColor="#dfe4ea"
+                underlayColor="#393c3f64"
                 onPress={() => {}}
                 style={[
                   { flex: 1 },
