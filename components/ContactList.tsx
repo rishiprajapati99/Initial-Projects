@@ -77,7 +77,7 @@ const ContactList = () => {
           <View key={uid} style={[styles.HorizontalListDP]}>
             <TouchableOpacity
               onPress={() => {
-                Alert.alert('Contact Info', name + '\n' + about);
+                Alert.alert('Contact Info', name + '\n' + about);//Alert.alert(title,message?,buttons?,options?) here title(needs a title), message?(if message),buttons?(if buttons),options?(if options) are the parameters of alert in RN
               }}
             >
               <Image

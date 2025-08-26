@@ -13,7 +13,8 @@ const FancyCard = () => {
   const openWebsite = (websiteUrl: string) => {
     Linking.openURL(websiteUrl);
   };
-  const mode = useColorScheme();
+  const backgroundcolor = useColorScheme() === 'dark' ? '#000' : '#fff';
+  const textColor = useColorScheme() === 'dark' ? '#fff' : '#000';
   return (
     <View
       style={
@@ -51,7 +52,7 @@ const FancyCard = () => {
           <Text
             style={[
               styles.ImageHeading,
-              // { color: mode === 'dark' ? 'white' : 'black' },
+              // { color: textColor },
             ]}
           >
             Hawa Mahal
@@ -59,7 +60,7 @@ const FancyCard = () => {
           <Text
             style={[
               styles.ImageLabel,
-              // { color: mode === 'dark' ? 'white' : 'black' },
+              // { color: textColor },
             ]}
           >
             Located in Jaipur ,The Pink City
@@ -69,7 +70,7 @@ const FancyCard = () => {
               <Text
                 style={[
                   styles.ImageDescription,
-                  // { color: mode === 'dark' ? 'white' : 'black' },
+                  // { color:textColor },
                 ]}
                 numberOfLines={1}
               >
@@ -86,7 +87,7 @@ const FancyCard = () => {
               <Text
                 style={[
                   { color: 'blue' },
-                  // { color: mode === 'dark' ? 'white' : 'black' },
+                  // { color: textColor },
                 ]}
               >
                 Read more
@@ -96,7 +97,7 @@ const FancyCard = () => {
           <Text
             style={[
               styles.ImageFooter,
-              // { color: mode === 'dark' ? 'white' : 'black' },
+              // { color: textColor },
             ]}
           >
             12 mins away

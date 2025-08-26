@@ -2,7 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, useColorScheme } from 'react-native';
 
 const FlatCards = () => {
-  const mode = useColorScheme();
+  const backgroundcolor = useColorScheme() === 'dark' ? '#000' : '#fff';
+  const textColor = useColorScheme() === 'dark' ? '#fff' : '#000';
   const colors = [
     { id: 1, name: 'Red', value: '#ef1010ff' },
     { id: 2, name: 'Yellow', value: '#f6e58d' },
@@ -15,9 +16,7 @@ const FlatCards = () => {
         key={colors[i].id} //set a unique key so that even if order of elements change still React will be able to detect the same element during any change
         style={[styles.cards, { backgroundColor: colors[i].value }]}
       >
-        <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
-          {colors[i].name} Card
-        </Text>
+        <Text style={[{ color: textColor }]}>{colors[i].name} Card</Text>
       </View>,
     );
   }
@@ -25,7 +24,7 @@ const FlatCards = () => {
     <View
       style={[
         {
-          // backgroundColor: mode === 'dark' ? 'black' : 'white',
+          // backgroundColor: backgroundcolor,
           height: 'auto',
         },
         // styles.border,

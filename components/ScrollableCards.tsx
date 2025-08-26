@@ -8,7 +8,8 @@ import {
 } from 'react-native';
 
 const ScrollableCards = () => {
-  const mode = useColorScheme();
+  const backgroundcolor = useColorScheme() === 'dark' ? '#000' : '#fff';
+  const textColor = useColorScheme() === 'dark' ? '#fff' : '#000';
   const colors = [
     { id: 1, name: 'Red', value: '#ef1010ff' },
     { id: 2, name: 'Yellow', value: '#f6e58d' },
@@ -28,7 +29,7 @@ const ScrollableCards = () => {
         key={colors[i].id}
         style={[styles.cards, { backgroundColor: colors[i].value }]}
       >
-        <Text style={[{ color: mode === 'dark' ? 'white' : 'black' }]}>
+        <Text style={[{ color: textColor }]}>
           {colors[i].name} Card
         </Text>
       </View>,
@@ -38,7 +39,7 @@ const ScrollableCards = () => {
     <View
       style={[
         {
-          // backgroundColor: mode === 'dark' ? 'black' : 'white',
+          // backgroundColor: backgroundcolor,
           //   flex: 1,
           //   height: 'auto',
         },

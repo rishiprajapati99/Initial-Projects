@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react';//here import and from are the keywords and React is an Object from the library('react') . import is used to import (bring) something from any library . from defines the destination that from where to bring the required thing. react library have the Object =>React which is used to compile and use the RN components like <View>,<Text> etc. in new versions of RN there is no need to write this line but for good practice i can write this line
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import {
   StyleSheet,
@@ -13,13 +13,15 @@ import BlogCard from './components/BlogCard';
 import ContactList from './components/ContactList';
 
 const App = () => {
-  const mode = useColorScheme();
+  const backgroundcolor = useColorScheme() === 'dark' ? '#000' : '#fff';
   return (
     <SafeAreaProvider>
       <SafeAreaView
         style={[
-          // { backgroundColor: mode === 'dark' ? 'black' : 'white',
-          { flex: 1 },
+          {
+            // backgroundColor: backgroundcolor,
+            flex: 1,
+          },
         ]}
       >
         {/* <StatusBar
