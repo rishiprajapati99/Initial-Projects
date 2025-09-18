@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 
 const FancyCard = () => {
+  const [Numberoflines, setNumberoflines] = useState(1);
+  const [ReadmoreVisibility, setReadmoreVisibility] = useState(false);
   const openWebsite = (websiteUrl: string) => {
     Linking.openURL(websiteUrl);
   };
@@ -45,7 +47,7 @@ const FancyCard = () => {
         <Image
           style={styles.ImageCard}
           source={{
-            uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/1280px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg',
+            uri: 'https://c.ndtvimg.com/gws/ms/6-hawa-mahal-facts-that-will-make-you-look-twice/assets/6.jpeg?1752136015',
           }}
         />
         <View style={[styles.cardBody]}>
@@ -72,17 +74,20 @@ const FancyCard = () => {
                   styles.ImageDescription,
                   // { color:textColor },
                 ]}
-                numberOfLines={1}
+                numberOfLines={Numberoflines}
               >
-                Hawa Mahal, also known as the "Palace of Winds", is a
-                distinctive five-story palace in Jaipur
+                The Hawa Mahal, or "Palace of Winds," is a striking, five-story
+                pink sandstone palace in Jaipur, India, built in 1799 for royal
+                ladies to observe city life discreetly.
               </Text>
             </View>
 
-            <TouchableOpacity
-              onPress={
-                () => openWebsite('https://en.wikipedia.org/wiki/Hawa_Mahal') //passed the callBack function(openWebsite) with the website URL
-              }
+           {!ReadmoreVisibility && ( <TouchableOpacity
+              onPress={() => {
+                setNumberoflines(3);
+                setReadmoreVisibility(true);
+              }}
+              disabled={ReadmoreVisibility}
             >
               <Text
                 style={[
@@ -92,7 +97,7 @@ const FancyCard = () => {
               >
                 Read more
               </Text>
-            </TouchableOpacity>
+            </TouchableOpacity>)}
           </View>
           <Text
             style={[

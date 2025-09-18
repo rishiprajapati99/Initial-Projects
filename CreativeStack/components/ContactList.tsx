@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     margin: 4,
     marginBottom: 12,
   },
-  HorizontalListDP: { marginHorizontal: 6 },
+  HorizontalListDP: { marginHorizontal: 12 },
   contactList: {},
   contactRow: { flexDirection: 'row', marginBottom: 14 },
   DP: {
