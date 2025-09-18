@@ -82,7 +82,8 @@ const FancyCard = () => {
               </Text>
             </View>
 
-           {!ReadmoreVisibility && ( <TouchableOpacity
+           {!ReadmoreVisibility?
+            <TouchableOpacity
               onPress={() => {
                 setNumberoflines(3);
                 setReadmoreVisibility(true);
@@ -97,7 +98,8 @@ const FancyCard = () => {
               >
                 Read more
               </Text>
-            </TouchableOpacity>)}
+            </TouchableOpacity>
+           :null}
           </View>
           <Text
             style={[
