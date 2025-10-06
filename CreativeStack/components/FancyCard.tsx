@@ -11,7 +11,7 @@ import {
 
 const FancyCard = () => {
   const [Numberoflines, setNumberoflines] = useState(1);
-  const [ReadmoreVisibility, setReadmoreVisibility] = useState(false);
+  const [ReadmoreVisibility, setReadmoreVisibility] = useState(true);
   const openWebsite = (websiteUrl: string) => {
     Linking.openURL(websiteUrl);
   };
@@ -82,13 +82,12 @@ const FancyCard = () => {
               </Text>
             </View>
 
-           {!ReadmoreVisibility?
+           {ReadmoreVisibility?
             <TouchableOpacity
               onPress={() => {
                 setNumberoflines(3);
-                setReadmoreVisibility(true);
+                setReadmoreVisibility(false);
               }}
-              disabled={ReadmoreVisibility}
             >
               <Text
                 style={[
